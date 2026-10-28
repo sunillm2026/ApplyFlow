@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApplyFlow | Job Search Dashboard</title>
+</head>
+<body>
+    <div class="app-shell">
+        
+
+        <!--Sidebar-->
+        <aside class="Sidebar">
+            <h2>ApplyFlow</h2>
+        
+
+        <nav aria-label="Main navigation">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#applications">Applications</a>
+            <a href="#add-applications">Add Applications</a>
+        </nav>
+        </aside>
+
+        <!-- Main content -->
+         <main class="main-content">
+
+            <!--Dashboard header-->
+            <header class="page-header">
+                <div>
+                    <h1>Job Search Dashboard</h1>
+                    <p>Keep your job search organized.</p>
+                </div>
+                <a href="#add-application">+ Add Application</a>
+            </header>
+
+            <!-- Dashboard Statistics -->
+             <section id="dashboard" area-labelledby="dashboard-title">
+                <h2 id="dashboard-title">Overview</h2>
+                <div class="stats-grid">
+                    <article class="stat-card"> 
+                        <h3>Total Applications</h3>
+                        <p3>3</p3>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Online Assesments</h3>
+                        <p1>1</p1>
+                    </article>
+                    <article class="stat-card">
+            <h3>Interviews</h3>
+            <p>1</p>
+          </article>
+          <article class="stat-card">
+            <h3>Offers</h3>
+            <p>0</p>
+          </article>
+</div>
+             </section>
+          <!--Applications-->
+          <section id="applications" aria-labelledby="applications">
+            <h2 id="application-title">My Applications</h2>
+
+            <div class="application-controls">
+                <label for="search">Search applications</label>
+                <input id="search" 
+                type="search" 
+                placeholder="Search company or role">
+
+                <label for="status-filter">Filter by status</label>
+                <select id="status-filter">
+                    <option value="Applied">Applied</option>
+                    <option value="Online Assessment">Online Assessment</option>
+                    <option value="Interview">Interview</option>
+                    <option value="offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                    <th scope="col">Company</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Applied Date</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>BrigthByte</td>
+                        <td>Junior Software Engineer</td>
+                        <td>Applied</td>
+                        <td>2026-10-24</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>DevNest</td>
+                        <td>Frontend Developer</td>
+                        <td>Applied</td>
+                        <td>2026-10-24</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CloudRoot</td>
+                        <td>Graduate Engineer Trainee</td>
+                        <td>Applied</td>
+                        <td>2026-10-24</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </section>
+          <!--Add application-->
+          <section id="add-application" area-labelledby="form-title">
+            <h2 id="form-title">Add an Application</h2>
+
+            <form id="application-form">
+                <div>
+                    <label for="company">Company name</label>
+                    <input type="text"  id="company" name="company" placeholder="e.g. Google" required>
+                </div>
+
+                <div>
+                    <label for="role">Job role</label>
+                    <input type="text" id="role" name="role" placeholder="e.g. Software Engineer" required>
+                </div>
+
+                <div>
+                    <label for="status">Application status</label>
+                    <select id="status" name="status" required>
+                        <option value="saved">Saved</option>
+                        <option value="applied">Applied</option>
+                        <option value="online Assessment">Online Assessment</option>
+                        <option value="interview">Interview</option>
+                        <option value="offer">Offer</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="applied-date">Application date</label>
+                    <input id="applied-date" name="appliedDate" type="date" required>
+                </div>
+
+                <div>
+                    <label for="job-url">Job posting URL</label>
+                    <input id="job-url" name="jobUrl" type="url" placeholder="https://example.com/job">
+                </div>
+
+                <button type="submit">Save Application</button>
+            </form>
+          </section>
+         </main>
+    </div>
+</body>
+</html>
