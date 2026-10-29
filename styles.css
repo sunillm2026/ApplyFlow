@@ -1,0 +1,533 @@
+
+/* ========================================
+   APPLYFLOW — DAY 2
+   Dashboard styling with CSS
+======================================== */
+
+/* 1. Global styles and design variables */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --sidebar-bg: #142542;
+  --page-bg: #f5f8ff;
+  --surface: #ffffff;
+  --text-primary: #172b4d;
+  --text-secondary: #64748b;
+  --border: #dbe7f7;
+  --success: #059669;
+  --danger: #dc2626;
+  --radius: 12px;
+  --shadow: 0 3px 12px rgba(30, 64, 175, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 2. Main application layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 3. Sidebar */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: var(--sidebar-bg);
+  color: #ffffff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  padding: 0 10px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 9px;
+  color: #cfdbef;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px;
+  border: 1px solid #385078;
+  border-radius: var(--radius);
+  color: #cfdbef;
+}
+
+/* 4. Main content */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 5. Top navigation bar */
+.topbar {
+  min-height: 76px;
+  padding: 16px 28px;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search-input {
+  width: min(100%, 450px);
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background-color: var(--surface);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+/* 6. Dashboard page heading */
+.dashboard-content {
+  padding: 28px;
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.page-heading h1 {
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.page-heading p {
+  color: var(--text-secondary);
+}
+
+/* 7. Buttons */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-weight: 600;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: #eff6ff;
+  color: var(--primary);
+  border-color: #bfdbfe;
+}
+
+.btn-danger {
+  background-color: #fff1f2;
+  color: var(--danger);
+  border-color: #fecaca;
+}
+
+/* 8. Dashboard statistics cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  background-color: var(--surface);
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.stat-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 12px 0 4px;
+}
+
+.stat-number {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.stat-description {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #dbeafe;
+  color: var(--primary);
+  font-size: 22px;
+}
+
+/* 9. Applications section */
+.applications-section,
+.application-form-section {
+  background-color: var(--surface);
+  padding: 22px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.section-header h2,
+.application-form-section h2 {
+  font-size: 21px;
+}
+
+.table-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.table-controls input,
+.table-controls select {
+  min-width: 150px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+/* 10. Applications table */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.applications-table th {
+  padding: 14px;
+  background-color: #f1f5fb;
+  color: #334b70;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.applications-table td {
+  padding: 15px 14px;
+  border-bottom: 1px solid #e8eef8;
+  font-size: 14px;
+}
+
+.applications-table tbody tr:hover {
+  background-color: #f8fbff;
+}
+
+.applications-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.company-name {
+  font-weight: 600;
+}
+
+/* 11. Application status badges */
+.status-badge {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-applied {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-assessment {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.status-interview {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.status-offer {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* 12. Application form */
+.application-form-section h2 {
+  margin-bottom: 20px;
+}
+
+.application-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+/* 13. Keyboard accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* 14. Tablet layout */
+@media (max-width: 1050px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .dashboard-content {
+    padding: 22px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 15. Mobile layout */
+@media (max-width: 700px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .topbar-profile {
+    justify-content: space-between;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .applications-section,
+  .application-form-section {
+    padding: 16px;
+  }
+
+  .section-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .table-controls {
+    flex-direction: column;
+  }
+
+  .table-controls input,
+  .table-controls select {
+    width: 100%;
+  }
+
+  .application-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width,
+  .form-actions {
+    grid-column: auto;
+  }
+}
